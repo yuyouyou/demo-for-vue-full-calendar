@@ -5,8 +5,8 @@
         :show-close = 'false'
         :visible.sync = "isAdd"
         width = "500px">
-        <el-form ref="formDetail" :model="formDetail" :rules="rules" label-width="60px" class="demo-ruleForm">
-            <el-form-item label="内容" prop="title">
+        <el-form ref="formDetail" :model="formDetail" label-width="60px" class="demo-ruleForm">
+            <el-form-item label="项目" prop="title">
                 <el-input v-model="formDetail.title" type="textarea"></el-input>
             </el-form-item>
             <el-form-item label="日期" prop="period">
@@ -31,17 +31,9 @@ export default {
     props:[ 'isAdd', 'editItem' ],
     data(){
         return{
-            rules:{
-                title: [
-                    { required: true, message: '请输入内容'},
-                ],
-                period:[
-                    { required: true, message: '请输入日期'},
-                ]
-            },
             formDetail:{
                 title:'',
-                period:[]
+                period:[this.editItem.time, this.editItem.time]
             }
         }
     },
@@ -67,9 +59,4 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
-.el-date-editor{
-    width:100%;
-}
-</style>
 
