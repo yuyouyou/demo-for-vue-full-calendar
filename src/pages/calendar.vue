@@ -33,6 +33,7 @@ export default {
         fixedWeekCount:false,//是否固定显示六周
         // weekMode:"liquid",//周数不定，每周的高度可变，整个日历高度不变
         allDaySlot:false,
+        titleFormat: "YYYY-MM",
         // allDay:true,
         header: {//表头信息
           left: 'prev, next, today',
